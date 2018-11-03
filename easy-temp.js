@@ -59,12 +59,12 @@ function tempSync(path,vars=null,start="<(",end=")>"){ // Synchronous templating
     return content;
   }
   else {
-    let output = content
+    let output = content;
     for(let variable in vars){
-      let expression = new RegExp(`${start}${variable}${end}`,"g")
-      output = output.replace(expression,vars[variable])
+      let expression = new RegExp(`${start}${variable}${end}`,"g");
+      output = output.replace(expression,vars[variable]);
     }
-    return output
+    return output;
   }
 }
 module.exports.temp = temp; // export as 'temp'
