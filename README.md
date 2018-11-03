@@ -2,6 +2,8 @@
 This is a templating module which is used for node JS. Highly versatile and easy to use. You can add your own variable
 detection parameters. This templating module does not require you to only use html, it can in fact, be used in any type of file.<br />
 <br />
+### Warning: project still in progress, downloading and using this module is not advised. Download/use on your own risk.
+<br /><br />
 **Architecture**: Asynchronous and Syncronous.<br /><br /><br />
 ## Setup
 Download `easy-temp.min.js`
