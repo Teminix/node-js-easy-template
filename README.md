@@ -83,7 +83,7 @@ et.temp('index.html',function(resp){console.log(resp)},{title:'My dream job',con
 ```
 #### Output(console):
 ```
-node app.js
+node index.js
 
 <body>
   <h1>My dream Job</h1>
