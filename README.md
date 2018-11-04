@@ -152,7 +152,129 @@ node index.js
   <input type='text' name='owner' value='Bill'>
 </body>
 ```
+<br /><br /><br />
+## Synchronous tempSync() function:
+Assume `et` as the module using the require function below:
+```javascript
+const et = require('./path/to/easy-temp.min');
+```
+#### Syntax: 
+*Note: Since this is synchronous, this function does not have a callback function*
+```javascript
+let template = et.tempSync(String(path),?vars=null,?start='<(',?end=')>')
+```
+<br /><br />
+**path:**<br /><br />
+This is the path to respective file you want to template.<br /> **Example**: `"index.html"` or some other file(does not have to be an html file)<br /><br /><br />
+**vars:(Object)**<br /><br />
+This is where you would specify your variables, note that this is an optional argument, so you do not have to specify variables for the template to substitute if you do not want it to. This would take a key value pair object. <br />
+**Example:** `{title:'World wide web',content:'The world wide web is a vast connection of webservers...'}`<br />
+Here the variable `title` has the value `'World wide web'` and `content` has the value `'The world wide web is a vast connection of web servers...'`<br /><br /><br />
+**start:(String) and end:(String)**<br /><br />
+Optional, you can specify how you want the template function to replace variables in the file you are rendering. The `start` argument would specify the start parameter and the `end` would specify the end <br />
+**Example:**
+As an example, you wish to substitute: `$title$` with `Heavens` in your template. You set the `start` argument in the function as `"$"` and end as `"$"`
+```html
+<span class='title'>$title$</span>
+```
+Here, the `$title$` part would be replaced with 'Heavens' after the function executes:
 
+```html
+<span class='title'>Heavens</span>
+```
+<br />
+## Examples:
+<br /><br /><br />
+Here are some full fledged examples of code and ways to implement this synchronous function in your application:
+### Basic templating using default start and end
+Start and end parameters are: `<(` and `)>` respectively.<br />
+#### Javascript(index.js):
+```javascript
+const et = require('./path/to/easy-temp.min');
+let template = et.tempSync('index.html',{title:'My dream job',content:'My dream job is front end web development ... ...'});
+console.log(template);
+// The response/output would be logged to the console
+```
+#### HTML(index.html):
+```html
+<body>
+  <h1><(title)></h1>
+   <p><(content)></p>
+</body>
+```
+#### Output(console):
+```
+node index.js
 
+<body>
+  <h1>My dream Job</h1>
+   <p>My dream job is front end we development ... ...</p>
+</body>
+```
+<br /><br />
+### Templating with different start and end parameters
+#### Example 1:
+Start and end parameters here are: `*` and `*` respectively.<br />
+#### Javascript(index.js):
+```javascript
+const et = require('./path/to/easy-temp.min');
+let template = et.temp('index.html'
+,{location:'India',name:'Sarah'}
+, "*","*");
+console.log(template);
+// The response/output would be logged to the console
+```
+#### HTML(index.html):
+```html
+<body>
+  <h1>Welcome *name*!</h1>
+   <p>Explore the vast heritage of *location*</p>
+</body>
+```
+#### Output(console):
+```
+node index.js
 
-## *README still in progress...*
+<body>
+  <h1>Welcome Sarah!</h1>
+   <p>Explore the vast heritage of India</p>
+</body>
+```
+<br />
+
+#### Example 2:
+Start and end parameters here are: `${` and `}` respectively.<br />
+#### Javascript(index.js):
+
+```javascript
+const et = require('./path/to/easy-temp.min');
+et.temp('index.html'
+,{car:'BMW',owner:'Bill'}
+, "*","*");
+console.log(template);
+// The response/output would be logged to the console
+```
+
+#### HTML(index.html):
+
+```html
+<body>
+  <img>
+  <div class="car">${car}</div><br>
+  <input type='text' name='owner' value='${owner}'>
+</body>
+```
+
+#### Output(console):
+
+```
+node index.js
+<body>
+  <img>
+  <div class="car">BMW</div><br>
+  <input type='text' name='owner' value='Bill'>
+</body>
+```
+<br /><br /><br />
+
+***Note: For both functions, the variables would be replaced in the template Globally, i.e, if there are two places with the same variable, they both would get replaces. Also note that if there is an undefined variable, it won't be replaced Ex: `{content:'something'}` in the document: `<(title)>` won't be replaced, it would remain as `<(title)>`***
