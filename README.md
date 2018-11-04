@@ -9,7 +9,7 @@ detection parameters. This templating module does not require you to only use ht
 Download [`easy-temp.min.js`](https://github.com/Teminix/node-js-easy-template/raw/master/easy-temp.min.js) if you wish to integrate it in you application without the intention of understanding the code, place it in your respective application directory or wherever you can access it. However, if you do want to understand the code, download [`easy-temp.js`](https://github.com/Teminix/node-js-easy-template/raw/master/easy-temp.js), it provides commenting.<br />
 Code to initiate:
 ```javascript
-const et = require("./path/to/easy-temp.min"); // remove the '.min' if your using uncnompressed version
+const et = require("./path/to/easy-temp.min"); // remove the '.min' if your using uncompressed version
 ```
 ### Key to documentation(important):
 For a function in this documentation: 
@@ -21,6 +21,10 @@ functionName(String(name),Number(amount),function(callback),?argument=Object(def
 
 `String(name)` Means nothing but that the argument named '`name`' must be a `String`. Same applies to any other supported datatype.<br />
 `function(callback)` means that the argument takes a function with a name of '`callback`'<br /><br />
+An example of this function would be:
+```javascript
+functionName('blah',45,function(){console.log('hello')},{message:'this is an optional argument'})
+```
 
 
 
