@@ -70,7 +70,7 @@ Here are some full fledged examples of code and ways to implement this function 
 Start and end parameters are: `<(` and `)>` respectively.<br />
 #### Javascript(index.js):
 ```javascript
-const et = require('./path/to/easy-template.min');
+const et = require('./path/to/easy-temp.min');
 et.temp('index.html',function(resp){console.log(resp)},{title:'My dream job',content:'My dream job is front end web development ... ...'})
 // The response/output would be logged to the console
 ```
@@ -96,7 +96,7 @@ node index.js
 Start and end parameters here are: `*` and `*` respectively.<br />
 #### Javascript(index.js):
 ```javascript
-const et = require('./path/to/easy-template.min');
+const et = require('./path/to/easy-temp.min');
 et.temp('index.html',function(resp){console.log(resp)}
 ,{location:'India',name:'Sarah'}
 , "*","*");
@@ -125,7 +125,7 @@ Start and end parameters here are: `${` and `}` respectively.<br />
 #### Javascript(index.js):
 
 ```javascript
-const et = require('./path/to/easy-template.min');
+const et = require('./path/to/easy-temp.min');
 et.temp('index.html',function(resp){console.log(resp)}
 ,{car:'BMW',owner:'Bill'}
 , "*","*");
