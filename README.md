@@ -4,9 +4,26 @@ detection parameters. This templating module does not require you to only use ht
 <br />
 ### Warning: project still in progress, downloading and using this module is not advised. Download/use on your own risk.
 <br /><br />
-**Architecture**: Asynchronous and Syncronous.<br /><br /><br />
+**Architecture**: Asynchronous and Synchronous.<br /><br /><br />
 ## Setup
-Download `easy-temp.min.js`
+Download [`easy-temp.min.js`](https://github.com/Teminix/node-js-easy-template/raw/master/easy-temp.min.js) if you wish to integrate it in you application without the intention of understanding the code, place it in your respective application directory or wherever you can access it. However, if you do want to understand the code, download [`easy-temp.js`](https://github.com/Teminix/node-js-easy-template/raw/master/easy-temp.js), it provides commenting.<br />
+Code to initiate:
+```javascript
+const et = require("./path/to/easy-temp.min"); // remove the '.min' if your using uncnompressed version
+```
+### Key to documentation(important):
+For a function in this documentation: 
+```javascript
+functionName(String(name),Number(amount),function(callback),?argument=Object(defaultValue))
+```
+<br />
+`?` Is an optional argument, after the '`=`' is  where the `Object(defaultValue)` is the default value. `Object` tells the argument type, which is an Object.<br />
+
+`String(name)` Means nothing but that the argument named '`name`' must be a `String`. Same applies to any other supported datatype.<br />
+`function(callback)` means that the argument takes a function with a name of '`callback`'<br /><br />
+
+
+
 
 <br /><br /><br />
 ## *README still in progress...*
