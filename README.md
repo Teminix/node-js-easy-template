@@ -67,7 +67,7 @@ Here, the `$title$` part would be replaced with 'Heavens' after the function exe
 <br /><br /><br />
 Here are some full fledged examples of code and ways to implement this function in your application:
 ### Basic templating using default start and end
-Start and end parameters are: `<(` and `)>` Respectively.<br />
+Start and end parameters are: `<(` and `)>` respectively.<br />
 #### Javascript(index.js):
 ```javascript
 const et = require('./path/to/easy-template.min');
@@ -90,5 +90,63 @@ node index.js
    <p>My dream job is front end we development ... ...</p>
 </body>
 ```
+<br /><br />
+### Templating with different start and end parameters
+#### Example 1:
+Start and end parameters here are: `*` and `*` respectively.<br />
+#### Javascript(index.js):
+```javascript
+const et = require('./path/to/easy-template.min');
+et.temp('index.html',function(resp){console.log(resp)}
+,{location:'India',name:'Sarah'}
+, "*","*");
+// The response/output would be logged to the console
+```
+#### HTML(index.html):
+```html
+<body>
+  <h1>Welcome *name*!</h1>
+   <p>Explore the vast heritage of *location*</p>
+</body>
+```
+#### Output(console):
+```
+node index.js
+
+<body>
+  <h1>Welcome Sarah!</h1>
+   <p>Explore the vast heritage of India</p>
+</body>
+```
+<br />
+#### Example 2:
+Start and end parameters here are: `${` and `}` respectively.<br />
+#### Javascript(index.js):
+```javascript
+const et = require('./path/to/easy-template.min');
+et.temp('index.html',function(resp){console.log(resp)}
+,{car:'BMW',owner:'Bill'}
+, "*","*");
+// The response/output would be logged to the console
+```
+#### HTML(index.html):
+```html
+<body>
+  <img>
+  <div class="car">${car}</div><br>
+  <input type='text' name='owner' value='${owner}'>
+</body>
+```
+#### Output(console):
+```
+node index.js
+<body>
+  <img>
+  <div class="car">BMW</div><br>
+  <input type='text' name='owner' value='Bill'>
+</body>
+```
+
+
 
 ## *README still in progress...*
