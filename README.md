@@ -297,4 +297,4 @@ node index.js
 ```
 <br /><br /><br />
 
-***Note: For both functions, the variables would be replaced in the template Globally, i.e, if there are two places with the same variable, they both would get replaces. Also note that if there is an undefined variable, it won't be replaced Ex: `{content:'something'}` in the document: `<(title)>` won't be replaced, it would remain as `<(title)>`***
+***Note: For both functions, the variables would be replaced in the template Globally, i.e, if there are two places with the same variable, they both would get replaced. Also note that if there is an undefined variable, it won't be replaced Example: `{content:'something'}` in the document: `<(title)>` won't be replaced, it would remain as `<(title)>` only***
