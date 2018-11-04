@@ -47,7 +47,7 @@ This is the path to respective file you want to template.<br /> **Example**: `"i
 This is a callback function since this is an asynchronous function. This callback has one callback variable. That variable is the content of the template file after it has been processed.<br /> **Example**: `function(resp){console.log(resp)}` would log the `resp` to the console.
 <br /><br /><br />
 **vars:(Object)**<br /><br />
-This is where you would specify you variables, note that this is an optional variable, so you do not have to specify variables for the template to substitute if you do not want it to. This would take a key value pair object. <br />
+This is where you would specify your variables, note that this is an optional variable, so you do not have to specify variables for the template to substitute if you do not want it to. This would take a key value pair object. <br />
 **Example:** `{title:'Future of society',content:'The world as we know it... blah'}`<br />
 Here the variable `title` has the value `'Future of society'` and `content` has the value `'The world as we know it... blah'`<br /><br /><br />
 **start:(String) and end:(String)**<br /><br />
