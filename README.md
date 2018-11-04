@@ -119,9 +119,11 @@ node index.js
 </body>
 ```
 <br />
+
 #### Example 2:
 Start and end parameters here are: `${` and `}` respectively.<br />
 #### Javascript(index.js):
+
 ```javascript
 const et = require('./path/to/easy-template.min');
 et.temp('index.html',function(resp){console.log(resp)}
@@ -129,7 +131,9 @@ et.temp('index.html',function(resp){console.log(resp)}
 , "*","*");
 // The response/output would be logged to the console
 ```
+
 #### HTML(index.html):
+
 ```html
 <body>
   <img>
@@ -137,7 +141,9 @@ et.temp('index.html',function(resp){console.log(resp)}
   <input type='text' name='owner' value='${owner}'>
 </body>
 ```
+
 #### Output(console):
+
 ```
 node index.js
 <body>
