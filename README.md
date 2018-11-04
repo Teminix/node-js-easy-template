@@ -109,7 +109,9 @@ et.temp('index.html',function(resp){console.log(resp)}
    <p>Explore the vast heritage of *location*</p>
 </body>
 ```
+
 #### Output(console):
+
 ```
 node index.js
 
@@ -183,18 +185,25 @@ Here, the `$title$` part would be replaced with 'Heavens' after the function exe
 <span class='title'>Heavens</span>
 ```
 <br />
+
 ## Examples:
+
 <br /><br /><br />
 Here are some full fledged examples of code and ways to implement this synchronous function in your application:
+
 ### Basic templating using default start and end
+
 Start and end parameters are: `<(` and `)>` respectively.<br />
+
 #### Javascript(index.js):
+
 ```javascript
 const et = require('./path/to/easy-temp.min');
 let template = et.tempSync('index.html',{title:'My dream job',content:'My dream job is front end web development ... ...'});
 console.log(template);
 // The response/output would be logged to the console
 ```
+
 #### HTML(index.html):
 ```html
 <body>
@@ -202,8 +211,11 @@ console.log(template);
    <p><(content)></p>
 </body>
 ```
+
 #### Output(console):
+
 ```
+
 node index.js
 
 <body>
@@ -211,27 +223,34 @@ node index.js
    <p>My dream job is front end we development ... ...</p>
 </body>
 ```
+
 <br /><br />
+
 ### Templating with different start and end parameters
 #### Example 1:
 Start and end parameters here are: `*` and `*` respectively.<br />
 #### Javascript(index.js):
+
 ```javascript
 const et = require('./path/to/easy-temp.min');
-let template = et.temp('index.html'
+let template = et.tempSync('index.html'
 ,{location:'India',name:'Sarah'}
 , "*","*");
 console.log(template);
 // The response/output would be logged to the console
 ```
+
 #### HTML(index.html):
+
 ```html
 <body>
   <h1>Welcome *name*!</h1>
    <p>Explore the vast heritage of *location*</p>
 </body>
 ```
+
 #### Output(console):
+
 ```
 node index.js
 
@@ -240,6 +259,7 @@ node index.js
    <p>Explore the vast heritage of India</p>
 </body>
 ```
+
 <br />
 
 #### Example 2:
@@ -248,7 +268,7 @@ Start and end parameters here are: `${` and `}` respectively.<br />
 
 ```javascript
 const et = require('./path/to/easy-temp.min');
-et.temp('index.html'
+let template = et.tempSync('index.html'
 ,{car:'BMW',owner:'Bill'}
 , "*","*");
 console.log(template);
