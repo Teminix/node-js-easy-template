@@ -130,7 +130,7 @@ Start and end parameters here are: `${` and `}` respectively.<br />
 const et = require('./path/to/easy-temp.min');
 et.temp('index.html',function(resp){console.log(resp)}
 ,{car:'BMW',owner:'Bill'}
-, "*","*");
+, "${","}");
 // The response/output would be logged to the console
 ```
 
